@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -6,6 +6,7 @@ import ProductCard from "./components/ProductCard";
 import Cart from "./components/Cart";
 // import Navbar from "./components/Navbar";
 import Layout from "./components/Layout";
+import { useDispatch } from "react-redux";
 function App() {
   // const [cart, setCart] = useState([]);
   // const [productQuantities, setProductQuantities] = useState(0);

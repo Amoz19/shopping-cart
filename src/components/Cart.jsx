@@ -1,6 +1,11 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import {
+  MaterialSymbolsArrowBackRounded,
+  MaterialSymbolsFeedbackOutline,
+  MaterialSymbolsArrowForward,
+} from "../utils/icons";
 
 import { calculateTotal, clearCarts } from "../features/products/productsSlice";
 
@@ -14,9 +19,19 @@ const Cart = () => {
 
   if (items.length < 1) {
     return (
-      <p className="text-white h-screen flex justify-center items-center">
-        There is no cart currenly. <Link to="/">Go to shopping</Link>
-      </p>
+      <div className="h-screen flex flex-col justify-center items-center">
+        <p className="flex items-center text-2xl text-zinc-900/50">
+          <MaterialSymbolsFeedbackOutline />
+          No cart currenly{" "}
+        </p>
+        <Link
+          to="/"
+          className="flex items-center text-2xl text-zinc-950 font-bold"
+        >
+          Go shopping
+          <MaterialSymbolsArrowForward />
+        </Link>
+      </div>
     );
   }
 
@@ -31,13 +46,16 @@ const Cart = () => {
           >
             Clear
           </button>
-          <p>Subtotal - ${total}</p>
+          <p className="bg-zinc-900 text-white p-3 rounded">
+            Subtotal - ${total.toFixed(2)}
+          </p>
         </div>
         <Link
           to="/"
-          className="bg-green-400 w-fit text-zinc-900 px-2 mt-4 rounded-xl "
+          className="bg-green-600 w-fit text-[whitesmoke] px-2 mt-4 rounded-xl flex items-center"
         >
-          Shop again
+          <MaterialSymbolsArrowBackRounded className="mr-1 text-xl" />
+          <p>shop again</p>
         </Link>
       </div>
     </div>

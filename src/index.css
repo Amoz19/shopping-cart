@@ -1,7 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Galada&family=Roboto&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  background-color: rgb(20, 20, 26);
+  font-family: "Roboto", sans-serif;
+  background-color: whitesmoke;
+}
+
+.logo {
+  font-family: "Galada", cursive;
 }

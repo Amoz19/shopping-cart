@@ -11,7 +11,7 @@ const ProductCard = () => {
       {products.map((product) => (
         <div
           key={product.id}
-          className="bg-slate-100 w-52 rounded-lg my-5 border-b-4 border-red-500"
+          className="bg-slate-200 w-52 rounded-lg my-5 border-b-4 border-red-500"
         >
           <img
             src={product.albumnImage}
@@ -19,7 +19,9 @@ const ProductCard = () => {
           />
           <div className="px-4 py-2">
             <h1 className="text-zinc-800/70">{product.albumName}</h1>
-            <p>${product.price}</p>
+            <p className="bg-red-700 w-fit rounded-3xl px-2 text-white">
+              ${product.price}
+            </p>
             {/* <p className="text-zinc-800/70">Artist : {product.artist}</p> */}
           </div>
           {/* <div>
